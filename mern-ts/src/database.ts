@@ -1,0 +1,13 @@
+import mongoose from 'mongoose';
+
+let URI = process.env.DB_CNN || '';
+
+mongoose.connect(URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+})
+.then(db => console.log('Db is connected'))
+.catch(error => console.error(error));
+
+export default mongoose;
